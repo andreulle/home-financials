@@ -1,0 +1,14 @@
+.categorized-list-result-table {
+    border: solid 2px black;
+    align-content: left;
+    float: left;
+}
+
+.categorized-list-result-table tbody tr td {
+    border: solid 1px black;
+}
+
+.categorized-list-result-table tbody .header {
+    background-color: cadetblue;
+    color: aliceblue;
+}
