@@ -50,7 +50,7 @@ export const fetchCategorizedList = async () => {
     });
 
     for (let [categoryDesc, value] of CategorybyMonth) {
-      if(!isNaN(value)){
+      if(!isNaN(value) && categoryDesc != null && categoryDesc != ""){
         categorizedList[categorizedList.length - 1].push({
           key: uuidv4(),
           style: "categoryItem",
