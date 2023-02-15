@@ -13,10 +13,10 @@ REACT_APP_API_KEY=<YOUR_GOOGLE_API_KEY>
 REACT_APP_SPREADSHEET_ID=<YOUR_GOOGLE_SPREADSHEET_ID>
 ```
 Replace <YOUR_GOOGLE_API_KEY> and <YOUR_GOOGLE_SPREADSHEET_ID> with your own API key and spreadsheet ID, respectively. Make sure your Google Sheet document has a sheet for each category with the following structure:
-Data	Category	Value		Data	Category	Value		Data	Category	Value
-01/01/2022	Food	10.50		...	...	...		...	...	...
-02/01/2022	Food	15.20		...	...	...		...	...	...
-...	...	...		...	...	...		...	...	...
+- Data	
+- Category	
+- Value
+
 ## Usage
 fetchData(sheet: string) => Promise
 Fetches the data from the specified sheet in the Google Sheets document and returns it as an array of rows and columns.
