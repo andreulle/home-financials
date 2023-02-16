@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import CategorizedList from './component/CategoryList';
+import NavigationMenu from './component/NavigationMenu'
 import {fetchCategorizedList } from './gapi/GAPI';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 
