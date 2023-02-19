@@ -6,11 +6,7 @@ const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
 const months = [0,1,2,3,4,5,6,7,8,9,10,11];
 const monthDesc = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 const planilhas = ['MASTER SUB (6)!A1:X63', 'VISA ROSA (6)!A1:X63', 'INFINITY PRETO (11)!A1:X63', 'NU ROXINHO (16)!A1:X63'];
-let categorySum = new Map();
-
-months.forEach(element => {
-  categorySum.set(element, new Map())
-});  
+//const planilhas = ['NU ROXINHO (16)!A1:X63'];
 
 export const fetchData = async (sheet) => {
   const response = await axios.get(
@@ -19,7 +15,7 @@ export const fetchData = async (sheet) => {
   return response.data;
 };
 
-export const listMajor = async (sheet) =>{
+export const listMajor = async (categorySum, sheet) =>{
   let range = await fetchData(sheet)
   
   months.forEach(element => {
@@ -35,9 +31,14 @@ export const listMajor = async (sheet) =>{
 
 export const fetchCategorizedList = async () => {
   const categorizedList = [];
+  let categorySum = new Map();
+
+  months.forEach(element => {
+    categorySum.set(element, new Map())
+  });  
 
   for (const key in planilhas) {
-    await listMajor(planilhas[key]);
+    await listMajor(categorySum, planilhas[key]);
   }
   
   for (let [key, CategorybyMonth] of categorySum) {
