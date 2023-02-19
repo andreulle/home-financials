@@ -3,8 +3,8 @@ import {v4 as uuidv4} from 'uuid';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
-const months = [0,1,2,3,4,5,6,7,8,9,10,11];
-const monthDesc = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+const months = [0,1,2,3,4,5];
+const monthDesc = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
 const planilhas = ['MASTER SUB (6)!A1:X63', 'VISA ROSA (6)!A1:X63', 'INFINITY PRETO (11)!A1:X63', 'NU ROXINHO (16)!A1:X63'];
 //const planilhas = ['NU ROXINHO (16)!A1:X63'];
 
