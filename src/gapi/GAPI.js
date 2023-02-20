@@ -22,7 +22,7 @@ export const listMajor = async (categorySum, sheet) =>{
     let columnCount = 5;
     let index = element * columnCount;
       range.values.forEach(row => {
-          let categoryKey = String(row[index + 1]).toUpperCase();
+          let categoryKey = String(row[index + 1]).toUpperCase().trim();
           let pastValue = !isNaN(categorySum.get(element).get(categoryKey) + 0) ? categorySum.get(element).get(categoryKey) : 0; 
 
           categorySum.get(element).set(categoryKey, pastValue + parseFloat(String(row[index + 3]).replace(",",".")));
