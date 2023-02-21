@@ -18,14 +18,14 @@ export const fetchData = async (sheet) => {
 export const listMajor = async (categorySum, sheet) =>{
   let range = await fetchData(sheet)
   
-  months.forEach(element => {
+  months.forEach(month => {
     let columnCount = 5;
-    let index = element * columnCount;
+    let index = month * columnCount;
       range.values.forEach(row => {
           let categoryKey = String(row[index + 1]).toUpperCase().trim();
-          let pastValue = !isNaN(categorySum.get(element).get(categoryKey) + 0) ? categorySum.get(element).get(categoryKey) : 0; 
+          let pastValue = !isNaN(categorySum.get(month).get(categoryKey) + 0) ? categorySum.get(month).get(categoryKey) : 0; 
 
-          categorySum.get(element).set(categoryKey, pastValue + parseFloat(String(row[index + 3]).replace(",",".")));
+          categorySum.get(month).set(categoryKey, pastValue + parseFloat(String(row[index + 3]).replace(",",".")));
       });
   });
 }
